@@ -62,11 +62,8 @@
   @keyframes kiss { 0%,100%{transform:scale(1) rotate(-4deg)} 50%{transform:scale(1.15) rotate(4deg)} }
   .kiss { font-size:56px; animation: pop 1.6s ease-in-out infinite; }
   @keyframes pop { 0%,100%{transform:scale(.8); opacity:.6} 50%{transform:scale(1.2); opacity:1} }
-  .hand { width:min(90vw,380px); animation: slidein 1.2s ease-out both; }
-  .hand svg { width:100%; height:auto; overflow:visible; }
-  .sway { transform-origin: 235px 190px; animation: sway 2.4s ease-in-out infinite 1.2s; }
-  @keyframes slidein { from { transform: translateX(120%); opacity:0 } to { transform:none; opacity:1 } }
-  @keyframes sway { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} }
+  .rosebox { width:min(88vw,360px); aspect-ratio:480/396; overflow:hidden; border-radius:22px; box-shadow:0 8px 24px rgba(0,0,0,.15); }
+  .rosebox img { width:100%; display:block; }
   #sendStatus { font-size:13px; opacity:.55; margin-top:18px; }
 </style>
 </head>
@@ -100,14 +97,7 @@
 
 <!-- 4: Финал -->
 <section class="screen" id="s4">
-  <div class="hand"><svg id="bouquet" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g class="sway"><path d="M95 60 Q165 132 235 185" stroke="#3ea657" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M150 38 Q192 121 235 185" stroke="#3ea657" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M205 62 Q220 133 235 185" stroke="#3ea657" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M125 95 Q180 150 235 185" stroke="#3ea657" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M180 98 Q207 151 235 185" stroke="#3ea657" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="95" cy="45" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(0 95 60)"/><ellipse cx="95" cy="45" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(72 95 60)"/><ellipse cx="95" cy="45" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(144 95 60)"/><ellipse cx="95" cy="45" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(216 95 60)"/><ellipse cx="95" cy="45" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(288 95 60)"/><circle cx="95" cy="60" r="8.25" fill="#ffd54a"/><ellipse cx="150" cy="23" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(0 150 38)"/><ellipse cx="150" cy="23" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(72 150 38)"/><ellipse cx="150" cy="23" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(144 150 38)"/><ellipse cx="150" cy="23" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(216 150 38)"/><ellipse cx="150" cy="23" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(288 150 38)"/><circle cx="150" cy="38" r="8.25" fill="#ffd54a"/><ellipse cx="205" cy="47" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(0 205 62)"/><ellipse cx="205" cy="47" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(72 205 62)"/><ellipse cx="205" cy="47" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(144 205 62)"/><ellipse cx="205" cy="47" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(216 205 62)"/><ellipse cx="205" cy="47" rx="9.0" ry="13.5" fill="#ff5c93" transform="rotate(288 205 62)"/><circle cx="205" cy="62" r="8.25" fill="#ffd54a"/><ellipse cx="125" cy="80" rx="9.0" ry="13.5" fill="#fff" transform="rotate(0 125 95)"/><ellipse cx="125" cy="80" rx="9.0" ry="13.5" fill="#fff" transform="rotate(72 125 95)"/><ellipse cx="125" cy="80" rx="9.0" ry="13.5" fill="#fff" transform="rotate(144 125 95)"/><ellipse cx="125" cy="80" rx="9.0" ry="13.5" fill="#fff" transform="rotate(216 125 95)"/><ellipse cx="125" cy="80" rx="9.0" ry="13.5" fill="#fff" transform="rotate(288 125 95)"/><circle cx="125" cy="95" r="8.25" fill="#ffd54a"/><ellipse cx="180" cy="83" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(0 180 98)"/><ellipse cx="180" cy="83" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(72 180 98)"/><ellipse cx="180" cy="83" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(144 180 98)"/><ellipse cx="180" cy="83" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(216 180 98)"/><ellipse cx="180" cy="83" rx="9.0" ry="13.5" fill="#ff8fb8" transform="rotate(288 180 98)"/><circle cx="180" cy="98" r="8.25" fill="#ffd54a"/>
-      <path d="M205 200 L265 170 L275 225 L215 235 Z" fill="#ffb3cf"/>
-    </g>
-    <path d="M262 168 Q300 160 312 185 L400 205 L400 245 L305 235 Q262 235 255 215 Z" fill="#f5c9a8"/>
-    <path d="M262 168 Q290 150 300 175 Q312 150 330 180" stroke="#e0a982" stroke-width="3" fill="none"/>
-    <ellipse cx="262" cy="200" rx="22" ry="34" fill="#f5c9a8" stroke="#e0a982" stroke-width="2"/>
-  </svg></div>
+  <div class="rosebox"><img src="rose.gif" alt=""></div>
   <h1 style="margin-top:20px">Уже жду нашей встречи ❤️</h1>
   <div id="sendStatus"></div>
   <div id="hearts"></div>
