@@ -113,7 +113,8 @@ const BOT_TOKEN = "";
 const CHAT_ID   = "";
 
 const NAME = "Дариночка";
-const EMAIL = "stecunivan@gmail.com"; // ответ приходит сюда (через formsubmit.co)
+// Бесплатная почта: web3forms.com -> введи свой email -> ключ придёт на почту -> вставь сюда
+const WEB3FORMS_KEY = "";
 
 /* ====== ДАННЫЕ ====== */
 const CATEGORIES = {
@@ -231,14 +232,16 @@ function finish(time) {
   sendEmail(text);
 }
 async function sendEmail(text) {
+  if (!WEB3FORMS_KEY) { console.log("Почта не настроена"); return; }
   try {
-    const r = await fetch("https://formsubmit.co/ajax/" + EMAIL, {
+    const r = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({ _subject: `${NAME} ответила на приглашение 💌`, message: text, _captcha: "false" })
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: `${NAME} ответила на приглашение 💌`, message: text })
     });
     if (!r.ok) throw new Error(r.status);
   } catch (e) { console.error("Не удалось отправить на почту", e); }
+}
 }
 function spawnHeart() {
   const h = document.createElement("div");
