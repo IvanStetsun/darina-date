@@ -242,7 +242,6 @@ async function sendEmail(text) {
     if (!r.ok) throw new Error(r.status);
   } catch (e) { console.error("Не удалось отправить на почту", e); }
 }
-}
 function spawnHeart() {
   const h = document.createElement("div");
   h.className = "heart";
